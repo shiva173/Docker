@@ -28,7 +28,10 @@ services:
       - db
     networks:
       - default
-
+# при выполнении скриптов взаимодействующих с базой       
+# часто возникала ошибка access denied for root@ip container apache 
+# пришлось залезать в контейнер мускула и добавлять root@ip этого контейнера
+# что не есть хорошо все должно работать при запуске контейнеров ...
   db:
     image: mysql:latest
     container_name: mysql
