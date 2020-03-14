@@ -32,6 +32,7 @@ services:
 # часто возникала ошибка access denied for root@ip container apache 
 # пришлось залезать в контейнер мускула и добавлять root@ip этого контейнера
 # что не есть хорошо все должно работать при запуске контейнеров ...
+# Не самое лучшее решение сделать docker commit для мускул контейнера после внесения изменений
   db:
     image: mysql:latest
     container_name: mysql
@@ -48,5 +49,3 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     networks:
       - default
-  networks:
-    - default
