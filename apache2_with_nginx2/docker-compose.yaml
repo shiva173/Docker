@@ -51,9 +51,3 @@ services:
       - /var/lib/mysql/:/var/lib/mysql # add data mysql
     networks:
       - default
-<<<<<<< HEAD
-
-#  networks:
-#    - default
-=======
->>>>>>> bf070a21666dbbf18f5262fa0ed9daa4ff49202f
