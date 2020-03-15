@@ -1,0 +1,14 @@
+app:
+  build: .
+  ports:
+    - "5000:5000"
+  restart: always
+  environment:
+    ENV: DEV
+  volumes:
+    - ./app:/app
+  links:
+    - dnmonster
+
+dnmonster:
+  image: amouat/dnmonster
