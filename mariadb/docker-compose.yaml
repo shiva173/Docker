@@ -13,5 +13,5 @@ services:
     restart: always
     ports:
       - 3307:3306
-    extra_hosts:
-      - "slave: 172.20.10.12"
+#    extra_hosts:
+#      - "slave: 172.20.10.12"
