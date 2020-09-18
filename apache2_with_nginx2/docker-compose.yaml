@@ -51,3 +51,9 @@ services:
       - /var/lib/mysql/:/var/lib/mysql # add data mysql
     networks:
       - default
+      
+      
+#   adminer:
+#     image: adminer
+#     ports:
+#       - 8080:8080
