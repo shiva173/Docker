@@ -9,7 +9,7 @@ services:
       - 80:80 # expose 80 on host and sent to 80 in container
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - ./nginx/index.html:/var/www/html/index.html
+      - ./www/project/:/var/www/html/
     depends_on:
       - apache2
     networks:
@@ -21,7 +21,7 @@ services:
     volumes:
       - ./apache2/ports.conf:/etc/apache2/ports.conf
       - ./apache2/000-default.conf:/etc/apache2/sites-available/000-default.conf
-      - /var/www/php/:/var/www/html/
+      - ./www/project/:/var/www/html/
     links:
       - db:mysql
     depends_on:
@@ -53,7 +53,7 @@ services:
       - default
       
       
-#   adminer:
-#     image: adminer
-#     ports:
-#       - 8080:8080
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
