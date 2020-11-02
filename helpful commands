@@ -1,0 +1,2 @@
+docker volume rm $(docker volume ls -f dangling=true -q) # удалить все вольюмы тех контейнеров, что удалены так как вольюмы сеществую не зависимо от контейнеров
+docker images | grep none | awk '{print $3}' | xargs docker rmi #удалить образы которые имеют тэг none
