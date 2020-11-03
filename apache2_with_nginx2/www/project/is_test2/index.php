@@ -22,13 +22,27 @@ if (!$result = $mysqli->query($sql)) {
 	exit;
 }
 
-#вывод инфы из запроса
 
-$rows = mysqli_num_rows($mysqli->query($sql));
 
-for ($i=0; $i < $rows; $i++) { 
-	$row = mysqli_fetch_row($mysqli->query($sql));
-	echo $row[0] . $row[1];
+echo "<table>\n";
+echo "<tr><td>id заказа</td><td>Номер заказа</td><td>Дата создания заказа</td></tr>";
+echo "<style> table {border-collapse: collapse;} td { border-right: 2px solid black; border-bottom: 2px solid black; padding: 5px;} </style>";
+
+while ($rows = $result->fetch_assoc()) {
+    
+    echo "<tr><td><a href='" . 'order_info.php' . "?id=" . $rows['id'] . "'>\n";
+    echo $rows['id'] . "</a></td>";
+
+    echo "<td>\n";
+    echo $rows['number'] . "</td>";
+
+    echo "<td>\n";
+    echo $rows['date_create'] . "</td>";
+
+  	echo "</tr>\n";
 }
+echo "</table>\n";
+
+
 
 ?>
