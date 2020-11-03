@@ -12,8 +12,6 @@ if ($mysqli->connect_errno) {
 	exit;
 }
 
-echo "ok";
-
 $sql = "SELECT * FROM `orders` ORDER BY `id` DESC LIMIT 10";
 
 if (!$result = $mysqli->query($sql)) {
@@ -21,8 +19,6 @@ if (!$result = $mysqli->query($sql)) {
 
 	exit;
 }
-
-
 
 echo "<table>\n";
 echo "<tr><td>id заказа</td><td>Номер заказа</td><td>Дата создания заказа</td></tr>";
@@ -42,7 +38,5 @@ while ($rows = $result->fetch_assoc()) {
   	echo "</tr>\n";
 }
 echo "</table>\n";
-
-
 
 ?>
