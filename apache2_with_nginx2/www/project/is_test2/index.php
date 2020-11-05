@@ -39,4 +39,7 @@ while ($rows = $result->fetch_assoc()) {
 }
 echo "</table>\n";
 
+$result->free();
+$mysqli->close();
+
 ?>
