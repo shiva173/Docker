@@ -51,4 +51,8 @@ echo "<table>";
 	echo "<tr><td>Имя получателя</td><td>" . $rows['client_fio'] . "</td></tr>";
 echo "</table>";
 
+
+$result->free();
+$mysqli->close();
+
 ?>
