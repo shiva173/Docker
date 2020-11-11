@@ -12,10 +12,15 @@ function validate_value ($mysqli, $value) {
 	switch (gettype($value)) {
 		case 'string':
 			settype($value, "string");
+			$value = strip_tags($value);
+			$value = htmlspecialchars($value);
 			return mysqli_real_escape_string($mysqli, $value);
 			break;
+			
 		case 'integer':
 			settype($value, "integer");
+			$value = strip_tags($value);
+			$value = htmlspecialchars($value);
 			return mysqli_real_escape_string($mysqli, $value);
 			break;
 	}
@@ -35,7 +40,6 @@ if (!$result = $mysqli->query($sql)) {
 $rows = $result->fetch_assoc();
 
 validate_value($mysqli, $rows['client_fio']);
-
 
 echo "<style> table {border-collapse: collapse;} td {border: 2px solid black;} </style>";
 
