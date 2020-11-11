@@ -4,13 +4,7 @@ require_once('connect_to_db.php');
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-if ($mysqli->connect_errno) {
-	echo "Error connection";
-	echo "Номер ошибки: " . $mysqli->connect_errno . "\n";
-	echo "Ошибка: " . $mysqli->connect_error . "\n";
-
-	exit;
-}
+require_once('check_connection.php');
 
 $sql = "SELECT * FROM `orders` ORDER BY `id` DESC LIMIT 10";
 
