@@ -1,0 +1,19 @@
+
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171_960_720.jpg)
+    background-image: inherit;
+}
+
+.nav_panel {
+    width: 100%;
+    high: 300 px;
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 10px;
+}
+
