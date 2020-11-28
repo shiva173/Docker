@@ -3,7 +3,8 @@
 <TITLE>opendir</TITLE>
 </HEAD>
 <BODY>
-<?
+<?php
+
 	$dir = opendir(".");
 
 	while($name = readdir($dir)){
@@ -15,8 +16,7 @@
 	}
 
 	closedir($dir);
-	
-	
+		
 ?>
 </BODY>
 </HTML>
