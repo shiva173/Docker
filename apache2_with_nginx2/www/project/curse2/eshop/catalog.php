@@ -1,7 +1,9 @@
 <?php
 	// подключение библиотек
-	require ('inc/lib.inc.php');
-	require ('inc/config.inc.php');
+	require_once('inc/lib.inc.php');
+	require_once('inc/config.inc.php');
+
+	$goods = selectAllItems();
 ?>
 <!DOCTYPE html>
 <html>
@@ -19,9 +21,16 @@
 	<th>Цена, руб.</th>
 	<th>В корзину</th>
 </tr>
-<?php
 
-?>
+<?php foreach ($goods as $item): ?>
+	<tr>
+		<td><?= $item['title']?></td>
+		<td><?= $item['author']?></td>
+		<td><?= $item['pubyear']?></td>
+		<td><?= $item['price']?></td> <td><a href="add2basket.php?id=<?= $item['id']?>">В корзину</a></td>
+	</tr>
+<?php endforeach ?>
+
 </table>
 </body>
 </html>

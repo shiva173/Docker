@@ -23,7 +23,7 @@ services:
       - ./apache2/000-default.conf:/etc/apache2/sites-available/000-default.conf
       - ./www/project/:/var/www/html/
     links:
-      - db:mysql
+      - db:mariadb
     depends_on:
       - db
     networks:
@@ -35,21 +35,23 @@ services:
 # Не самое лучшее решение сделать docker commit для мускул контейнера после внесения изменений
 # для пересборки используй docker-compose up --build
   db:
-    image: mysql:latest
-    container_name: mysql
-    restart: always
+    image: mariadb:10.1.45
+    container_name: mariadb
+    #restart: always
     environment:
-      MYSQL_DATABASE: publications
-      MYSQL_USER: root
-      MYSQL_PASSWORD: pass
+      #MYSQL_DATABASE: publications
+      #MYSQL_USER: root
+      #MYSQL_PASSWORD: pass
       MYSQL_ROOT_PASSWORD: pass
-      MYSQL_ROOT_HOST: apache2
-    command: --default-authentication-plugin=mysql_native_password
+      #MYSQL_ROOT_HOST: apache2
+    #command: --default-authentication-plugin=mysql_native_password
     ports:
       - 3306:3306
     volumes:
       - /var/lib/mysql/:/var/lib/mysql # add data mysql
       - /home/vadim/docker/Git_repo/apache2_with_nginx2/www/project/curse2/eshop/eshop.sql:/tmp/eshop.sql
+    #volumes:
+     # - /var/lib/mysql/:/var/lib/mysql # add data mysql
     networks:
       - default
       
