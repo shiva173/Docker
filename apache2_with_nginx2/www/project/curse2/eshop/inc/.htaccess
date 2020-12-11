@@ -1,2 +1,2 @@
 # .htaccess для подключаемых файлов
-Deny from all
+Allow from all

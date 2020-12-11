@@ -1,7 +1,7 @@
 <?php
-	require "secure/session.inc.php";
-	require "../inc/lib.inc.php";
-	require "../inc/config.inc.php";
+	require_once "secure/session.inc.php";
+	require_once "../inc/lib.inc.php";
+	require_once "../inc/config.inc.php";
 ?>
 <!DOCTYPE html>
 <html>
