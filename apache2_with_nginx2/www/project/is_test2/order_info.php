@@ -5,6 +5,8 @@ require_once('connect_to_db.php');
 require_once('check_connection.php');
 
 
+
+
 $order_id = $_GET['id'];
 
 function validate_value ($mysqli, $value) {

@@ -11,12 +11,12 @@
 	<title>is_test_3</title>
 </head>
 <body>
+	<h1>{$rows}</h1>
 	<table>
 		<tr><td>id заказа</td><td>Номер заказа</td><td>Дата создания заказа</td></tr>
-		{while $rows >= $result_offset}
-			{$content}
-			{$result_offset--}
-		{/while}	
-	</table>
+		{$content}
+	</table>	
+		{$forward}
+		{$back}
 </body>
 </html>
