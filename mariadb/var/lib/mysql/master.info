@@ -1,6 +1,6 @@
 33
-mariadb-bin.000004
-816
+
+4
 127.0.0.1
 root
 pass12q!2
@@ -34,5 +34,7 @@ pass12q!2
 using_gtid=1
 do_domain_ids=0
 ignore_domain_ids=0
+END_MARKER
+in_ids=0
 END_MARKER
 R

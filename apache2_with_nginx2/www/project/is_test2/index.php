@@ -5,20 +5,7 @@ require_once('connect_to_db.php');
 require_once('check_connection.php');
 
 //------------------>add smarty lib
-
-define('SMARTY_DIR', 'smarty-3.1.35/libs/');
-
-require_once(SMARTY_DIR . 'Smarty.class.php');
-
-$smarty = new Smarty();
-
-$smarty->template_dir = './templates/';
-$smarty->compile_dir = './templates_c/';
-$smarty->config_dir = './configs/';
-$smarty->cache_dir = './cache/';
-
-$smarty->debugging = true;
-
+require_once('add_smarty.php');
 //<------------------------------------
 
 
@@ -76,12 +63,6 @@ $mysqli->close();
 $result_offset->free();
 
 //declare variables for smarty--------------------------------------->
-$smarty->assign('sql_offset', $sql_offset);
-$smarty->assign('size_page', $size_page);
-$smarty->assign('pageno', $pageno);
-$smarty->assign('offset', $offset);
-$smarty->assign('result_offset', $result_offset);
-$smarty->assign('rows', $rows);
 $smarty->assign('content', $content);
 $smarty->assign('forward', $forward);
 $smarty->assign('back', $back);

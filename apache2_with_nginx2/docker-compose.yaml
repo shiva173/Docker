@@ -48,14 +48,10 @@ services:
     ports:
       - 3306:3306
     volumes:
-<<<<<<< HEAD
-      - /var/lib/mysql/:/var/lib/mysql
-=======
       - /var/lib/mysql/:/var/lib/mysql # add data mysql
       - /home/vadim/docker/Git_repo/apache2_with_nginx2/www/project/curse2/eshop/eshop.sql:/tmp/eshop.sql
     #volumes:
      # - /var/lib/mysql/:/var/lib/mysql # add data mysql
->>>>>>> 2cfcfa31a996a2cf6b5f568d1385723d443f65b0
     networks:
       - default
       
