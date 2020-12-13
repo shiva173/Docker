@@ -29,9 +29,12 @@ $sql_offset = "SELECT * FROM `orders` ORDER BY `id` DESC LIMIT $offset, $size_pa
 $result_offset = $mysqli->query($sql_offset);
 
 
+$rows = $result_offset->fetch_assoc();
+
+$content = '';
+
 while ($rows = $result_offset->fetch_assoc()) {
     
-    global $content;
 
     $content .= "<tr><td><a href='" . 'order_info.php' . "?id=" . $rows['id'] . "'>\n";
     $content .= $rows['id'] . "</a></td>";
@@ -46,7 +49,6 @@ while ($rows = $result_offset->fetch_assoc()) {
 
 } 
 
-
 $back = "";
 
 $forward  = '<a href="'.$_SERVER['PHP_SELF'].'?pageno='. ($offset + 10) .'">'. "Вперед" ."</a> ";
@@ -60,12 +62,14 @@ $back = '<a href="'.$_SERVER['PHP_SELF'].'?pageno='. ($offset - 10) .'">'. "На
 
 $mysqli->close();
 
-$result_offset->free();
 
 //declare variables for smarty--------------------------------------->
 $smarty->assign('content', $content);
 $smarty->assign('forward', $forward);
 $smarty->assign('back', $back);
+// $smarty->assign('foo', 10);
 //<-------------------------------------------------------------------
 $smarty->display('index.tpl');
+
+$result_offset->free();
 ?>

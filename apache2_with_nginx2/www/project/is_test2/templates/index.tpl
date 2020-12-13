@@ -12,7 +12,11 @@
 </head>
 <body>
 	<table>
-		<tr><td>id заказа</td><td>Номер заказа</td><td>Дата создания заказа</td></tr>
+		<tr>
+			<td>id заказа</td>
+			<td>Номер заказа</td>
+			<td>Дата создания заказа</td>
+		</tr>
 		{$content}
 	</table>	
 		{$forward}
