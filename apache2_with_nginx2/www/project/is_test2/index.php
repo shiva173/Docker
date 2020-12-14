@@ -31,7 +31,7 @@ $result_offset = $mysqli->query($sql_offset);
 
 $rows = $result_offset->fetch_assoc();
 
-$content = '';
+$content = "";
 
 while ($rows = $result_offset->fetch_assoc()) {
     
