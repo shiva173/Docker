@@ -1,2 +1,10 @@
 docker volume rm $(docker volume ls -f dangling=true -q) # удалить все вольюмы тех контейнеров, что удалены так как вольюмы сеществую не зависимо от контейнеров
 docker images | grep none | awk '{print $3}' | xargs docker rmi #удалить образы которые имеют тэг none
+
+
+
+# Backup
+docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
+
+# Restore
+cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root DATABASE
