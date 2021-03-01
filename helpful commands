@@ -12,3 +12,6 @@ cat backup.sql | docker exec -i CONTAINER /usr/bin/mysql -u root --password=root
 
 # find logs docker 
 docker inspect --format='{{.LogPath}}' name-container
+
+# size containers and volumes on system
+docker system df
