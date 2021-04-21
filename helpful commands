@@ -19,3 +19,13 @@ docker system df
 
 # docker gui managment
 https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/
+
+# shell for startup:
+#!/bin/bash
+box_name=portainer
+docker rm -f $box_name
+docker run -d -p 9000:9000 -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock --name $box_name portainer/portainer-ce --admin-password='your password'
+
+# generate pass:
+sudo apt install apache2-utils
+htpasswd -nb -B admin "your-password" | cut -d ":" -f 2
