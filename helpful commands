@@ -15,3 +15,7 @@ docker inspect --format='{{.LogPath}}' name-container
 
 # size containers and volumes on system
 docker system df
+
+
+# docker gui managment
+https://documentation.portainer.io/v2.0/deploy/ceinstalldocker/
