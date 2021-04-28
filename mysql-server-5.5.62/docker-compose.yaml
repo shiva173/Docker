@@ -9,6 +9,7 @@ services:
     volumes:
       - /var/lib/mysql:/var/lib/mysql
       - ./my.cnf:/etc/mysql/my.cnf
+      - ./usr/local/mysql/data:/usr/local/mysql/data
     restart: always
     ports:
       - 3306:3306
