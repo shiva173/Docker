@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:5.5.62
+    container_name: db_ks2008 
+    env_file: .env
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf
+    restart: always
+    ports:
+      - 3306:3306
