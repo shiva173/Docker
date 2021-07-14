@@ -27,6 +27,5 @@ echo -n mypassword > /tmp/portainer_password
 
 # shell for startup:
 #!/bin/bash
-#!/bin/bash
 docker rm -f portainer
 docker run --name portainer -d -p 9000:9000 -p 8000:8000 -v /var/run/docker.sock:/var/run/docker.sock -v /tmp/portainer_password:/tmp/portainer_password portainer/portainer-ce --admin-password-file /tmp/portainer_password
