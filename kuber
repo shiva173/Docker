@@ -4,3 +4,6 @@ kubectl set image deploy my-deployment nginx=nginx:1.12
 
 minikube start --nodes 2
 запуск нескольких нод
+
+
+kubectl port-forward pod/mypod 8080:80
