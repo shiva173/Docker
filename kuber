@@ -1,2 +1,6 @@
 kubectl set image deploy my-deployment nginx=nginx:1.12
 откатить версию образа в deployment
+
+
+minikube start --nodes 2
+запуск нескольких нод
