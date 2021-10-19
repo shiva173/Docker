@@ -3,7 +3,7 @@ docker volume rm $(docker volume ls -q)
 
 docker images | grep none | awk '{print $3}' | xargs docker rmi #удалить образы которые имеют тэг none
 
-
+docker image prune -a # delete images
 
 # Backup
 docker exec CONTAINER /usr/bin/mysqldump -u root --password=root DATABASE > backup.sql
